@@ -25,7 +25,7 @@ mongodb.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: tr
 function passwordProtected(req, res, next) {
     res.set('WWW-Authenticate',  'Basic realm="Simple Todo App "')
     console.log(req.headers.authorization)
-    if(req.headers.authorization == "Basic bGVhcm46amF2YXNjcmlwdA==") {
+    if(req.headers.authorization == "Basic bGVhcm46amF2YXNjcmlwdG5lc3Rp") {
         next()
     }else {
         res.status(401).send("Authentication Required")
